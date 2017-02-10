@@ -25,46 +25,10 @@ public class QueenBoard{
 	int temp = 0;
 	for(int x = 0; x < board.length; x++){
 	    for(int y = 0; y < board.length; y++){
-		if(board[x][y] == 0){
-		    temp++;
-		}
-	    }
-	}
-	return temp;
-    }
-		
+		if
     public boolean solve(){
-        return solveh(0);
-	    
-    }
-
-    public boolean solveh(row){
-	for(int c = 0; c < board.length; c++){
-	    if(addQueen(row, c)){
-		solveh(row + 1);
-	    }
-	}
-	    
-
-    private void addQueen(int x, int y){
-	if(board[x][y] != 0){
-	    return false;
-	}
-	board[x][y] = -1;
-	for(int r = 0; r < board.length; r++){
-	    for(int c = 0; c < board.length; c++){
-		if((r == x || c == y) && (board[r][c] != -1)){
-		    if(!(r == x && c == y)){
-			board[r][c] == board[r][c] + 1;
-		    }
-		}
-	    }
-	}
-	for(int k = 0; k < board.length - 1; k++){
-	    if(x + k < board.length && y + k < board.length){
-		board[x + k][y + k] = board[x + k][y + k] + 1;
-		
 	
+    }
 
     /**
      *@return the number of solutions found, or -1 if the board was never solved.
@@ -80,5 +44,5 @@ public class QueenBoard{
     public String toString(){
     	return "";
     }
-}
+}public class Recursion{
     
