@@ -227,7 +227,7 @@ public class QueenBoard{
 		    temp += " ";
 		}
 		else{
-		    temp += board[r][c];
+		    temp += "_";
 		    temp += " ";
 		}
 	    }
