@@ -1,12 +1,15 @@
 public class Recursion{
 	
-	public static final double epsilon = 0.0000000000000000001;
+	public static final double epsilon = 0.0000000001;
 	public static String name(){
 		return "Lu,Alexander";
 	}
 	public static double sqrt(double n) throws IllegalArgumentException{
 		if(n < 0){
 			throw new IllegalArgumentException("No Negatives PLEASE! We don't deal with imaginary in Java");
+		}
+		if(n == 0.0){
+		    return 0.0;
 		}
 		return sqrt(1, n);
 	}
