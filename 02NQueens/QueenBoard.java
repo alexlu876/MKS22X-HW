@@ -59,7 +59,7 @@ public class QueenBoard{
 	public void solveh2(int r){
 		if(r >= board.length){
 			solutionCount++;
-			System.out.println(toString());
+			//System.out.println(toString());
 		}
 		if(r < board.length){
 		for(int c = 0; c < board.length; c++){
