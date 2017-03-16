@@ -1,20 +1,16 @@
 import java.util.*;
 public class Quick{
     
-    public static int[] part(int []data, int start, int end){
+    public static int part(int []data, int start, int end){
 	int[] temp = new int[data.length];
-	int rand = 3; //data[(int)Math.floor(Math.random() * data.length)];
-	int holder = data.length - 1;
-	int numDups = 0;
-	for(int i = 0; i < data.length; i++){
+	int range = end - start;
+	int rand = data[(int)Math.round(Math.random() * range)];
+	int holder = end;
+	for(int i = start; i < end; i++){
 	    if(i == holder){
 		temp[i] = rand;
 	    }
-	    if(data[i] == rand){
-		numDups += 1;
-		data[i] = rand;
-	    }
-	    if(data[i] < rand){
+	    if(data[i] <= rand){
 		temp[i] = data[i];
 	    }
 	    if(data[i] > rand){
@@ -22,14 +18,14 @@ public class Quick{
 		holder -= 1;
 	    }
 	}
-	data = temp;
-	return data;
-	//if(temp.indexOf(
+	System.out.println(rand);
+	System.out.println(Arrays.toString(temp));
+	return holder;
     }
 
     public static void main(String[] args){
 	int[] test = new int[]{5, 2, 3, 7, 9, 1, 4};
-	part(test, 0, 0);
+	part(test, 0, 6);
 	System.out.println(Arrays.toString(test));
     }
 }
