@@ -10,10 +10,9 @@ public class Quiz2Redux{
       help(s, words, 0, "");
       Collections.sort(words);
       System.out.println(words);
-      Collections.sort(words);
       return words;
   }
-  
+    
     private static void help(String s, ArrayList<String> words, int index, String current){
 	if(words.indexOf(current) == -1){
 	    words.add(current);
@@ -26,7 +25,7 @@ public class Quiz2Redux{
   }
 
     public static void main(String[] a){
-	combinations("wxof");
+	combinations("abcabc!");
     }
 	
 }

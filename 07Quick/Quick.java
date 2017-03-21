@@ -1,31 +1,44 @@
 import java.util.*;
 public class Quick{
+
+    public Quick(){
+    }
     
-    public static int part(int []data, int start, int end){
-	int[] temp = new int[data.length];
-	int range = end - start;
-	int rand = data[(int)Math.round(Math.random() * range)];
-	int holder = end;
-	for(int i = start; i < end; i++){
-	    if(i == holder){
-		temp[i] = rand;
+    public void part(int[] a, int start, int end){
+	Random r = new Random();
+	int pivot = r.nextInt(end - start) + start;
+	int value = a[pivot];
+	System.out.println(pivot);
+	System.out.println(value);
+	int i = start;
+	int lt = start;
+	int gt = end;
+	while(i <= gt){
+	    if(a[i] == value){
+		i++;
 	    }
-	    if(data[i] <= rand){
-		temp[i] = data[i];
+	    else if(a[i] < value){
+		swap(a, i, lt);
+		lt++;
+		i++;
 	    }
-	    if(data[i] > rand){
-		temp[holder] = data[i];
-		holder -= 1;
+	    else{
+		swap(a, i, gt);
+		gt--;
 	    }
 	}
-	System.out.println(rand);
-	System.out.println(Arrays.toString(temp));
-	return holder;
+    }
+
+    public void swap(int[] a, int b, int c){
+        int temp = a[b];
+	a[b] = a[c];
+	a[c] = temp;
     }
 
     public static void main(String[] args){
+	Quick q = new Quick();
 	int[] test = new int[]{5, 2, 3, 7, 9, 1, 4};
-	part(test, 0, 6);
+	q.part(test, 0, 6);
 	System.out.println(Arrays.toString(test));
     }
 }
