@@ -17,8 +17,8 @@ public class Merge{
 		for(int i = 0; i < a.length - var; i++){
 			right[i] = a[i + var];
 		}
-		System.out.println(Arrays.toString(left));
-		System.out.println(Arrays.toString(right));
+		//System.out.println(Arrays.toString(left));
+		//System.out.println(Arrays.toString(right));
 		mergesort(left);
 		mergesort(right);
 		mergeTheTwoHalvesIntoTheOriginalArray(left, right, a);
@@ -56,7 +56,7 @@ public class Merge{
 			b[i] = 1000000 - i;
 		}
 		m.mergesort(b);
-		System.out.println(Arrays.toString(b));
+		//System.out.println(Arrays.toString(b));
     }
 
 
