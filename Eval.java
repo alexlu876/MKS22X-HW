@@ -2,23 +2,25 @@ import java.util.*;
 public class Eval{
     
     public static double eval(String s){
-	String[] str = new String[s.length];
-	str = s.split(" ");
-	Stack s = new Stack();
+	String[] str = s.split(" ");
+	Stack st = new Stack();
         for(int i = 0; i < str.length; i++){
 	    if(!(str[i].equals("+") || str[i].equals("*") || str[i].equals("/") || str[i].equals("-") || str[i].equals("%"))){
-		s.push(Double.parseDouble(str[i]));
+		Double x = new Double(Double.parseDouble(str[i]));
+		st.push(x);
 	    }
 	    else{
-		double b = s.pop();
-		double a = s.pop();
-		s.push(operate(a, b, str[i]));
+		Double b = (Double)st.pop();
+		Double a = (Double)st.pop();
+		st.push(operate(a, b, str[i]));
 	    }
 	}
-	return s.pop();
+	return ((Double)st.pop()).doubleValue();
     }
 
-    public static double operate(double a, double b, String op){
+    public static double operate(Double c, Double d, String op){
+	double a = c.doubleValue();
+	double b = d.doubleValue();
 	if(op.equals("*")){
 	    return a * b;
 	}
@@ -38,7 +40,7 @@ public class Eval{
     }
 
     public static void main(String[] a){
-	String s = "8 11 +";
+	String s = "16 8 % 11 +";
 	System.out.println(eval(s));
     }
 }
