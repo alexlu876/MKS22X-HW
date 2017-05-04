@@ -13,3 +13,13 @@ public class MyHeap{
 	minMax = boolAndGood;
     }
 
+    public void add{
+	
+    }
+
+    public String remove(){
+    }
+
+    public String peek(){
+    }
+
