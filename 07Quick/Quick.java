@@ -4,7 +4,7 @@ public class Quick{
     public Quick(){
     }
     
-    public int[] part(int[] a, int start, int end){
+    public static int[] part(int[] a, int start, int end){
 	Random r = new Random();
 	int pivot = r.nextInt(end - start) + start;
 	int value = a[pivot];
@@ -35,11 +35,11 @@ public class Quick{
 	return temp;
     }
 
-    public void quicksort(int[] a){
+    public static void quicksort(int[] a){
 	quickHelp(a, 0, a.length - 1);
     }
 
-    public void quickHelp(int[] a, int start, int end){
+    public static void quickHelp(int[] a, int start, int end){
 	if(start >= end){
 	    return;
 	}
@@ -55,7 +55,7 @@ public class Quick{
 	return a[k];
     }
 
-    public void swap(int[] a, int b, int c){
+    public static void swap(int[] a, int b, int c){
         int temp = a[b];
 	a[b] = a[c];
 	a[c] = temp;

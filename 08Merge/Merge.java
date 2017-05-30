@@ -4,8 +4,8 @@ public class Merge{
     public Merge(){
     }
 
-    public void mergesort(int[] a){
-		if(a.length == 1){
+    public static void mergesort(int[] a){
+		if(a.length == 1 || a.length == 0){
 			return;
 		}
 		int var = a.length / 2;
@@ -24,7 +24,7 @@ public class Merge{
 		mergeTheTwoHalvesIntoTheOriginalArray(left, right, a);
     }
 
-    public void mergeTheTwoHalvesIntoTheOriginalArray(int[] a, int[] b, int[] c){
+    public static void mergeTheTwoHalvesIntoTheOriginalArray(int[] a, int[] b, int[] c){
         int i = 0;
 		int j = 0;
 		while(i + j < a.length + b.length){
@@ -56,7 +56,7 @@ public class Merge{
 			b[i] = 1000000 - i;
 		}
 		m.mergesort(b);
-		//System.out.println(Arrays.toString(b));
+		System.out.println(Arrays.toString(b));
     }
 
 
